@@ -9,7 +9,7 @@ import java.awt.*;
 
 public class Main {
 
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/dataa";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/your_database_name";
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "";
 
