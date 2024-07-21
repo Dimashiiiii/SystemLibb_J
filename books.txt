@@ -1,0 +1,10 @@
+ID        Name                Genre                         Price          
+------------------------------------------------------------------
+1         Чистый код          анализ                        99,9 $         
+2         sddssddsd           sddssdds                      15             
+3         Clean Code          code                          1515           
+4         книга               комедия                       4545           
+5         Name Book           Genre Book                    Price Book     
+6         121212              123123123                     321123         
+7         qwerty55            male                          price          
+8         srgrgrg             gsrgrsge                      grsdgdg        
