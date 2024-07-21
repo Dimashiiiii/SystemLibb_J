@@ -42,7 +42,7 @@ public class Main {
         exit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.dispose();  //закрытие окно
+                frame.dispose();
             }
         });
 
@@ -95,20 +95,20 @@ public class Main {
         JFrame frame = new JFrame("Поиск читателя");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(600, 400);
-        frame.setLocationRelativeTo(null); //окно открыветься по центру экрана
+        frame.setLocationRelativeTo(null); 
 
         JPanel panel = new JPanel();
         frame.add(panel);
-        placeComponents(panel); //Размещаем компоненты в JPanel
-        frame.setVisible(true); //окно должень быт видимом
+        placeComponents(panel); 
+        frame.setVisible(true); 
     }
 
     private static void placeComponents(JPanel panel) {
-        panel.setLayout(null); // Устанавливаем свободное расположение компонентов
+        panel.setLayout(null); 
 
         JLabel titleLabel = new JLabel("ПОИСК ЧИТАТЕЛЯ", SwingConstants.CENTER);
         titleLabel.setBounds(200, 10, 200, 30);
-        panel.add(titleLabel); // Добавляем метку в JPanel
+        panel.add(titleLabel); 
 
         JLabel idLabel = new JLabel("Введите ID:");
         idLabel.setBounds(50, 50, 100, 20);
@@ -116,7 +116,7 @@ public class Main {
 
         JTextField idTextField = new JTextField();
         idTextField.setBounds(150, 50, 120, 20);
-        panel.add(idTextField); // Добавляем поле для ввода ID в JPanel
+        panel.add(idTextField); 
 
         JButton searchButton = new JButton("Поиск");
         searchButton.setBounds(300, 50, 80, 20);
@@ -124,19 +124,18 @@ public class Main {
 
         JButton cancelButton = new JButton("Отмена");
         cancelButton.setBounds(400, 50, 80, 20);
-        panel.add(cancelButton); // Добавляем кнопку "Отмена" в JPanel
+        panel.add(cancelButton); 
 
-        // таблица для отображения результатов
         JTable table = new JTable();
         JScrollPane scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(50, 100, 500, 250); // Располагаем JScrollPane для таблицы
-        panel.add(scrollPane); // Добавляем JScrollPane в JPanel
+        scrollPane.setBounds(50, 100, 500, 250); 
+        panel.add(scrollPane); 
 
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String id = idTextField.getText(); //получаем id
-                fetchAndDisplayData(id, table); //выполняем запрос и отображаем результаты в таблице
+                String id = idTextField.getText(); 
+                fetchAndDisplayData(id, table); 
             }
         });
 
@@ -144,7 +143,7 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(panel);
-                topFrame.dispose(); //закрываем текущее окно
+                topFrame.dispose(); 
             }
         });
     }
@@ -170,7 +169,7 @@ public class Main {
                 };
                 model.addRow(rowData);
             }
-            table.setModel(model); //установка модель таблицы с результатами
+            table.setModel(model);
         } catch (SQLException ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(null, "Ошибка при выполнении запроса");
@@ -255,7 +254,6 @@ public class Main {
         frame.add(exit_button);
         frame.add(phoneLabel);
         frame.add(phoneText);
-
         frame.setSize(500, 300);
         frame.setLayout(null);
         frame.setVisible(true);
@@ -359,7 +357,6 @@ public class Main {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet rs = preparedStatement.executeQuery();
 
-            //извлечение данных из ResultSet и создание таблицы
             ResultSetMetaData metaData = rs.getMetaData();
             int columnCount = metaData.getColumnCount();
 
